@@ -22,24 +22,24 @@
 <h1>Login</h1>
 
 <%! boolean adminUsernameBool;%>
-<%! String usernameParameter;%>
-<% usernameParameter = request.getParameter("username");%>
-<% if(usernameParameter!= null && usernameParameter.equals("admin")){
+<%! String userUsernameParameter;%>
+<% userUsernameParameter = request.getParameter("username");%>
+<% if(userUsernameParameter!= null && userUsernameParameter.equals("admin")){
     adminUsernameBool = true;
 } else {
     adminUsernameBool = false;
 };%>
 <%! boolean adminPasswordBool;%>
-<%! String usernamePassword;%>
-<% usernamePassword = request.getParameter("password");%>
-<% if(usernamePassword != null && usernamePassword.equals("password")){
+<%! String userPasswordParameter;%>
+<% userPasswordParameter = request.getParameter("password");%>
+<% if(userPasswordParameter != null && userPasswordParameter.equals("password")){
     adminPasswordBool = true;
 } else {
     adminPasswordBool = false;
 }%>
 
 <% if(adminUsernameBool && adminPasswordBool){
-    response.sendRedirect("http://localhost:8080/profile.jsp?username=admin&password=password");
+    response.sendRedirect("http://localhost:8080/profile.jsp?username=" + userUsernameParameter + "&password=" + userPasswordParameter);
 }%>
 
 
