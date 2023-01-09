@@ -1,3 +1,5 @@
+package com.codeup.adlister.dao;
+
 import java.io.Serializable;
 
 public class Author implements Serializable {

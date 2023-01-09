@@ -1,3 +1,5 @@
+package com.codeup.adlister.dao;
+
 import java.util.*;
 
 public class BeanTest {
@@ -24,12 +26,12 @@ public class BeanTest {
         Quote quote1 = new Quote();
         quote1.setId(1);
         quote1.setAuthor(author1);
-        quote1.setQuote("Quote 1");
+        quote1.setQuote("com.codeup.adlister.dao.Quote 1");
 
         Quote quote2 = new Quote();
         quote2.setId(2);
         quote2.setAuthor(author1);
-        quote2.setQuote("Quote 2");
+        quote2.setQuote("com.codeup.adlister.dao.Quote 2");
 
         ArrayList <Quote> quotesArray = new ArrayList<>();
         quotesArray.add(quote1);
