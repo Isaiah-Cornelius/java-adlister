@@ -1,3 +1,5 @@
+package com.codeup.adlister.dao;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,9 +44,12 @@ public class MySQLAdsDao implements Ads {
 //        System.out.println("title = " + title);
         String desc = ad.getDescription();
 //        System.out.println("desc = " + desc);
-        String query = "INSERT INTO ads (users_id, title, description) VALUES (1, '" + title + "', '" + desc +"') ";
-        Statement statement = connection.createStatement();
-        statement.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
+        String query = "INSERT INTO ads (users_id, title, description) VALUES (1, ?, ?)";
+
+        PreparedStatement statement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+        statement.setString(1, title);
+        statement.setString(2, desc);
+        statement.executeUpdate();
         ResultSet rs = statement.getGeneratedKeys();
         rs.next();
         System.out.println("rs.getLong(1) = " + rs.getLong(1));
