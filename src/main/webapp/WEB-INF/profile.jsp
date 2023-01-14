@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -9,9 +10,8 @@
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
     <div class="container">
-        <h1>Welcome, ${user.getUsername()}!</h1>
-        <h1>${username}</h1>
-        <h2>${user.getEmail()}</h2>
+        <h1><c:out value= "Welcome, ${user.getUsername()}!" /></h1>
+        <h2><c:out value= "Email: ${user.getEmail()}"/></h2>
     </div>
 
 </body>
